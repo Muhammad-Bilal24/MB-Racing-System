@@ -1,14 +1,10 @@
-# MB-Racing-System
-Version 1.0
-
-Hello everyone 
-I was free so i decided to make racing system that is easy to use for all in Dm / Tdm / Rp.
-Well i'll tell how you can use that racing system.
-
+#MB-Racing-System
+#Version 1.1
 First you need to be rcon admin to use this filterscript cmds.
 
-I added several cmds to make it easy and better. 
+I added several cmds to make it easy and better.
 
+#Commands
 /rcmds to watch all race filterscipt cmds.
 
 /createrace to create your own race by just pressing mouse Left key (Key Fire)
@@ -18,6 +14,30 @@ I added several cmds to make it easy and better.
 /startrace will start the race for all the player who join the race event.
 
 /endrace cmd for rcon admin he can only end the race.
+
+/joinrace teleport you to race position if race is active and you can chose car from given car menu.
+
+/leaverace if you want to leave race.
+
+New cmd added /deleterace to delete race.
+
+New cmd added /topracer to check top racer in current race.
+
+#issues Fixed
+Only one person can create race at time.
+
+Checkpoint didn't removed when any budy win the race.
+
+#New Features.
+You can now create checkpoint from 1 to 99.
+
+New cmd added /deleterace to delete race.
+
+New cmd added /topracer to check top racer in current race.
+
+Optimze all code to make it more faster and better.
+
+Checkpoints are replaced with Race Checkpoints.
 
 /joinrace  teleport you to race position if race is active and you can chose car from given car menu.
 
