@@ -8,7 +8,7 @@
 #define SCMToAll SendClientMessageToAll
 //================================Color ======================================//
 #define 	COLOR_YELLOW	0xFFFF00AA
-#define     COLOR_GREEN     0x33AA33AA
+#define     	COLOR_GREEN     0x33AA33AA
 //==============================Dialog ID =====================================//
 #define DIALOG_RACE 1002
 //==============================forwards ======================================//
@@ -101,7 +101,7 @@ CMD:createrace(playerid,params[])
 }
 
 CMD:enableraceevent(playerid)
-{   new string[128];
+{   	new string[128];
 	if(!IsPlayerAdmin(playerid))return SCM(playerid,COLOR_GREEN,"[MB-RACE SYSTEM]: You need to be rcon admin to use that cmd.");
 	if(RACE_CREATED == 0)return SCM(playerid,COLOR_GREEN,"[MB-RACE SYSTEM]: You need to create checkpoint to start the race.");
 	if(RACE_STARTED == 1)return SCM(playerid,COLOR_GREEN,"[MB-RACE SYSTEM]: Race is already enabled .");
@@ -192,7 +192,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 					GetPlayerPos(playerid,X,Y,Z);
 					Rx[i]= X , Ry[i] = Y , Rz[i] = Z;
 					RACE_CREATED = 1;
-                    CP_COUNTER = 0;
+                    			CP_COUNTER = 0;
 					CREATING_CHECKPOINTS = 0;
 					SCM(playerid,COLOR_GREEN,"[MB-RACE SYSTEM]: Congratz You've successfully created Race checkpoints.");
 					break;
@@ -205,7 +205,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				}
 		}
 		new string[128];
-	    format(string, sizeof(string), "~r~RACE CHECKPOINT~n~~n~~y~ID %d~n~successfully created~n~~r~Total CP ~y~~n~(%d / %d).",CP_COUNTER,CP_COUNTER,TOTAL_RACE_CP);
+	    	format(string, sizeof(string), "~r~RACE CHECKPOINT~n~~n~~y~ID %d~n~successfully created~n~~r~Total CP ~y~~n~(%d / %d).",CP_COUNTER,CP_COUNTER,TOTAL_RACE_CP);
 		GameTextForPlayer(playerid,string,1500,3);
 		CP_COUNTER++;
 	}
@@ -267,10 +267,10 @@ OnPlayerEnterCP(playerid)
 		{
 			new pCash = Cash[random(5)];
 			new string[128];
-		    format(string,sizeof(string),"[MB-RACE SYSTEM]: Congratulation %s has completed the race at First Position and won %d",GetName(playerid),pCash);
+		    	format(string,sizeof(string),"[MB-RACE SYSTEM]: Congratulation %s has completed the race at First Position and won %d",GetName(playerid),pCash);
 			SCMToAll(COLOR_YELLOW,string);
 			GivePlayerMoney(playerid,pCash);
-		    RACE_STARTED = 0;
+		    	RACE_STARTED = 0;
 			RACE_EVENT_ACTIVE = 0;
 			foreach(Player,a)
 			{
@@ -341,23 +341,23 @@ public OnPlayerRaceCountDown()
 	if(COUNT_DOWN <= 1)
 	{
  		format(string, sizeof(string), "~r~RACE IS~n~~b~STARTED~n~~r~Lets~y~Go");
-	    KillTimer(RACE_TIMER);
+	    	KillTimer(RACE_TIMER);
 		foreach(Player,i)
 		{
 			if(PLAYER_IN_RACE[i])
 			{
 	  			TogglePlayerControllable(i, 1);
-		    	GameTextForPlayer(i,string,2000,3);
+		    		GameTextForPlayer(i,string,2000,3);
 				PlayerPlaySound(i, 4203, 0.0, 0.0, 0.0);
 			}
 		}
 	}
-    format(string, sizeof(string), "~r~RACE IS GOING~n~~n~~y~TO~n~Start In~n~~r~%d ~y~~n~seconds.",COUNT_DOWN);
+    	format(string, sizeof(string), "~r~RACE IS GOING~n~~n~~y~TO~n~Start In~n~~r~%d ~y~~n~seconds.",COUNT_DOWN);
 	foreach(Player,i)
 	{
 		if(PLAYER_IN_RACE[i])
 		{
-	    	GameTextForPlayer(i,string,1000,3);
+	    		GameTextForPlayer(i,string,1000,3);
 			PlayerPlaySound(i, 4203, 0.0, 0.0, 0.0);
 		}
 	}
